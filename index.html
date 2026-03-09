@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <title>Portfolio</title>
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <header>
+    <a class="logo" href="#">
+      <img class="logo-img" src="Logo.png" alt="Logo" />
+      <span class="logo-text">Portfolio</span>
+    </a>
+    <nav>
+      <a href="#">Resume</a>
+      <a href="#work">Competition</a>
+      <a href="#work">Product</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="ham" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#"        onclick="closeMenu()">Resume</a>
+    <a href="#work"    onclick="closeMenu()">Competition</a>
+    <a href="#work"    onclick="closeMenu()">Product</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-rule"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Portfolio · 2026</span>
+      <h1 class="hero-title">
+        Work made<br/>
+        with <em>intention</em><br/>
+        &amp; craft.
+      </h1>
+      <p class="hero-sub">
+        Hi — this is my personal space where I share my projects,
+        skills, and the work I'm most proud of. Have a look around.
+      </p>
+      <div class="hero-ctas">
+        <a href="#work"    class="btn btn-primary">View Work ↓</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <p class="section-label">— Selected Work</p>
+    <h2 class="section-title">What I Do</h2>
+    <p class="section-body">
+      A focused collection of projects and disciplines that define
+      my approach to design and development.
+    </p>
+    <div class="work-grid">
+      <div class="card">
+        <div class="card-number">01</div>
+        <h3 class="card-title">Competition</h3>
+        <p class="card-desc">Competed in design and development challenges, pushing creative limits under pressure.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">02</div>
+        <h3 class="card-title">Product</h3>
+        <p class="card-desc">Built end-to-end products from concept to launch, balancing UX with technical precision.</p>
+      </div>
+      <div class="card">
+        <div class="card-number">03</div>
+        <h3 class="card-title">Resume</h3>
+        <p class="card-desc">A record of education, experience, and skills developed along the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">— Let's Talk</p>
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-body">
+      Have a project in mind or just want to say hello?
+      I'd love to hear from you.
+    </p>
+    <div class="contact-row">
+      <a href="mailto:hello@example.com" class="btn btn-primary">Send an Email</a>
+      <a href="#" class="btn btn-ghost">View Resume →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Portfolio</span>
+    <span>All rights reserved</span>
+  </footer>
+
+  <script>
+    const ham = document.getElementById('ham');
+    const mobileNav = document.getElementById('mobileNav');
+    ham.addEventListener('click', () => {
+      ham.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+    function closeMenu() {
+      ham.classList.remove('open');
+      mobileNav.classList.remove('open');
+    }
+
+    const cursor = document.getElementById('cursor');
+    const ring   = document.getElementById('cursorRing');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
+      ring.style.left   = e.clientX + 'px';
+      ring.style.top    = e.clientY + 'px';
+    });
+  </script>
+</body>
+</html>
